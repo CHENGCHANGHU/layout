@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link href="{{ ./index.css }}" rel="stylesheet">
+  <script type="module" src="{{ ./base.js }}"></script>
+  <script type="module" src="{{ ./index.js }}"></script>
+</head>
+<body>
+  <section class="layout-material">
+    <h2>Material</h2>
+    <div class="material-box">
+      <div class="material-container">
+        <div
+          data-role="material"
+          data-material-type="block"
+          draggable="true">Block</div>
+        <div
+          data-role="material"
+          data-material-type="flex"
+          draggable="true">Flex</div>
+        <div
+          data-role="material"
+          data-material-type="grid"
+          draggable="true">Grid</div>
+      </div>
+      <div class="material-container">
+        <div
+          data-role="material"
+          data-material-type="placeholder"
+          draggable="true">placeholder</div>
+      </div>
+      <div class="material-container">
+        <div
+          data-role="material"
+          data-material-type="native"
+          draggable="true">&lt;div&gt;</div>
+        <div
+          data-role="material"
+          data-material-type="native"
+          draggable="true">&lt;span&gt;</div>
+        <div
+          data-role="material"
+          data-material-type="native"
+          draggable="true">&lt;p&gt;</div>
+        <div
+          data-role="material"
+          data-material-type="native"
+          draggable="true">&lt;a&gt;</div>
+      </div>
+      <div class="custom-materials material-container"></div>
+      <input type="text" data-role="material-name-input" placeholder="material name" />
+      <textarea type="textarea" data-role="material-json-input" placeholder="material JSON"></textarea>
+      <button id="btn-add-material" data-function-name="handleAddMaterial">Add Material</button>
+    </div>
+  </section>
+  <section class="layout-composite">
+    <h2>
+      Composite
+      <select id="composite-type-selector" data-role="composite-type-selector">
+        <option value="editor">Editor</option>
+        <option value="json">JSON</option>
+        <option value="template">Template</option>
+      </select>
+      
+      <div class="header-affiliated">
+        <div class="checkbox-item">
+          <input type="checkbox" id="all-selector" data-role="all-selector">
+          <label for="all-selector">SelectAll</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="parasite-selector" data-role="parasite-selector" checked>
+          <label for="parasite-selector">Parasitized</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="default-header-fixed" data-role="default-header-fixed" checked>
+          <label for="default-header-fixed">DefaultHeaderFixed</label>
+        </div>
+        <button class="btn-update" data-function-name="handleUpdate">Update</button>
+      </div>
+    </h2>
+    <div class="composite-box" data-role="root" data-composite-type="editor">
+      <button class="btn-copy" data-function-name="handleCopy">Copy</button>
+      <div class="composite-zone" data-role="root"></div>
+    </div>
+  </section>
+  <section class="layout-property">
+    <h2>Attribute</h2>
+    <div class="property-box">
+      <div class="attribute-container"></div>
+      <div class="add-attribute-box">
+        <input type="text" data-role="attribute-name-input" placeholder="attribute name">
+        <input type="text" data-role="attribute-value-input" placeholder="attribute value">
+        <button data-function-name="handleAddAttribute">Add Attribute</button>
+      </div>
+      <div class="style-container"></div>
+      <div class="add-attribute-box">
+        <input type="text" data-role="style-name-input" placeholder="style name" list="style-names">
+        <datalist id="style-names"></datalist>
+        <input type="text" data-role="style-value-input" placeholder="style value">
+        <button data-function-name="handleAddStyle">Add Style</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link href="{{ ./index.css }}" rel="stylesheet">
+  <script type="module" src="{{ ./base.js }}"></script>
+  <script type="module" src="{{ ./index.js }}"></script>
+</head>
+<body>
+  <section class="layout-material">
+    <h2>Material</h2>
+    <div class="material-box">
+      <div class="material-container">
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="block"
+          draggable="true">Block</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="flex"
+          draggable="true">Flex</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="grid"
+          draggable="true">Grid</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="custom"
+          draggable="true">Test 1</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="custom"
+          draggable="true">Test 2</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="custom-ul"
+          draggable="true">Test ul</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="custom-element"
+          draggable="true">Test custom</div>
+        <div
+          class="material"
+          data-role="material"
+          data-material-type="placeholder"
+          draggable="true">placeholder</div>
+      </div>
+      <input type="text" data-role="material-name-input" placeholder="material name" />
+      <textarea type="textarea" data-role="material-json-input" placeholder="material JSON"></textarea>
+      <button id="btn-add-material" data-action="handleAddMaterial">Add Material</button>
+    </div>
+  </section>
+  <section class="layout-composite">
+    <h2>
+      Composite
+      <select id="composite-type" data-id="composite-type">
+        <option value="editor">Editor</option>
+        <option value="json">JSON</option>
+        <option value="template">Template</option>
+      </select>
+      <div class="header-affiliated">
+        
+        <div class="checkbox-item">
+          <input type="checkbox" id="parasite-select" data-id="parasite-select" checked>
+          <label for="parasite-select">Parasited</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="default-select" data-id="default-select" checked>
+          <label for="default-select">Selected</label>
+        </div>
+        <button class="btn-update" data-action="update">Update</button>
+      </div>
+    </h2>
+    <div class="composite-box" data-role="root" data-composite-type="editor">
+      <button class="btn-copy" data-action="copy">Copy</button>
+      <div class="composite-container" data-role="root"></div>
+    </div>
+  </section>
+  <section class="layout-property">
+    <h2>Attribute</h2>
+    <div class="property-box">
+      <div class="attribute-container"></div>
+      <div class="style-container"></div>
+    </div>
+  </section>
+</body>
+</html>
